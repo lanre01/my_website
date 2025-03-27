@@ -16,7 +16,9 @@
       </div>
       <div>
         <ul class="icons">
-          <li class="menu-icon"> <a href="#"><img src="assets/menu-bar.png" alt="menu"/></a></li>
+          <li class="menu-icon"> 
+            <a href="#" ondblclick="toggleMenu"><img src="assets/menu-bar.png" alt="menu"/></a>
+          </li>
           <li class="remaining-icon"><a href="https://github.com/lanre01"><img src="assets/github.png" alt="github account"></a></li>
           <li class="remaining-icon"><a href="https://www.linkedin.com/in/lawal-alongbija-412b88185/"><img src="assets/linkedin.png" alt="linkedin profile"></a></li>
           <li class="remaining-icon">
@@ -27,8 +29,25 @@
 
 
 <!-- The rest of the body of the website-->
+      <div id="menu-container" 
+        class="menu-container" 
+        tabindex="0" onblur="hideMenu()">
+        <ul>
+          <li>
+            <a href="#"><img src="assets/github.png" alt=""></a>
+          </li>
+          <li>
+            <a href="#"><img src="assets/linkedin.png" alt=""></a>
+          </li>
+          <li> 
+            <a href="#"><img src="assets/send-mail.png" alt=""></a>
+          </li>
+        </ul>
+      </div>
 
     <section class="main-body">
+     
+
       <section class="my-description">
         <div class="description">
           <p style="font-size: 1.2rem;">
@@ -45,8 +64,12 @@
       <!-- List of things i want to show -->
       <section class="showcase">
         <div class="projects">
-          <div style="font-size: 1.2rem;">
-             <a href="projects.html">Projects</a>    
+          <div 
+            style="font-size: 1.2rem; 
+                   background-color: #858286; 
+                   padding: 10px; text-align: center;"
+                   >
+             <h3>Projects<h3>    
           </div>
          
 
@@ -70,11 +93,55 @@
 
         </div>
 
+        <div class="news">
+          <div 
+            style="font-size: 1.2rem; 
+                   background-color: #858286; 
+                   padding: 10px; text-align: center;"
+                   >
+             <h3>News<h3>    
+          </div>
+         
+
+          <div class="news-list">
+            <ul>
+              <li>
+                <p>Happy to announce i will be starting an intership 
+                with HubSpot this summer as a backend engineer 27/03/2025
+                </p> 
+              </li>
+               
+            </ul>
+
+          </div>
+
+        </div>
+
+
 
        
        
       </section>
     </section>
+
+  <script>
+    function toggleMenu() {
+      const container = document.getElementById('menu-container');
+      const isVisible = container.classList.contains('show');
+
+      if (!isVisible) {
+        container.classList.add('show');
+        container.focus(); // give it focus so onblur works
+      } else {
+        container.classList.remove('show');
+      }
+    }
+
+    function hideMenu() {
+      document.getElementById('menu-container').classList.remove('show');
+    }
+
+  </script>
 
   </body>
 
